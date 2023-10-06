@@ -1,12 +1,18 @@
-import { StudentTable } from "@/components/StudentTable";
-import { students } from "@/data/students";
+"use client"
 
+import {CustomButton} from "@/components/CustomButton";
 
 const Page = () => {
+
+  const handleButton1 = () => alert("clicou no 1 botao")
+  const handleButton2 = () => alert("clicou no 2 botao")
+  const handleButton3 = () => alert("clicou no 3 botao")
+
   return (
-  <div className="container mx-auto">
-    <h1 className="text-5xl mb-5">Lista de Estudantes:</h1>
-    <StudentTable students={students}/>
+  <div className="w-screen h-screen flex justify-center items-center">
+    <CustomButton label="Clique Aqui" onClick={handleButton1}/>
+    <CustomButton label="Clique Aqui 2" onClick={handleButton2}/>
+    <CustomButton label="Clique Aqui 3" onClick={handleButton3}/>
   </div>
   );
 }
