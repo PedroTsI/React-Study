@@ -3,16 +3,18 @@
 import { useState } from "react";
 
 const Page = () => {
-  const [count, setCount] = useState<number>(0); 
+  const [showSecret, setSecret] = useState<boolean>(false);
 
   const handleClickButton = () => {
-    setCount(count + 1);
+    setSecret(!showSecret);
   }
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-          <p>{count}</p>
-          <button onClick={handleClickButton} className="bg-blue-500 p-3">+1</button>
+          <button onClick={handleClickButton} className="bg-blue-500 p-3">{showSecret ? 'Ocultar' : 'Mostrar'}</button>
+          {showSecret && 
+            <div className=" p-3 bg-blue-300 rounded-md mt-3">Area secreta</div>
+          }
         </div>
     );
 }
